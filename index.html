@@ -34,13 +34,15 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600&family=Onest:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Onest:wght@300;400;500;600&display=swap">
 <style>
 /* Layout: полноширинные секции, крем и винный цвет; заголовки в обычном регистре (Literata), текст Onest; без разрядки и курсивных акцентов */
 :root{
   --cream:#f3ece4; --paper:#faf6f1; --wine:#6b1420; --wine-d:#4b0d16;
   --ink:#241a19; --muted:#6f5f5b; --line:rgba(107,20,32,.16);
-  --head:"Literata",Georgia,serif; --body:"Onest",system-ui,sans-serif;
+  --head:"Cormorant Garamond",Georgia,serif; --body:"Onest",system-ui,sans-serif;
+  --beige1:#c8ab8a; --beige2:#e2cfb8; --gold-hi:#fbf0d9; --gold-lo:#a9814f;
+  --gold:linear-gradient(180deg,#fff6e3 0%,#ecd3a6 45%,#b38a57 100%);
   --pad:clamp(20px,5vw,96px);
   color-scheme:light}
 *{box-sizing:border-box}
@@ -50,7 +52,8 @@ img{display:block;max-width:100%}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--wine);outline-offset:3px}
 .px{padding-left:max(var(--pad),env(safe-area-inset-left,0px));padding-right:max(var(--pad),env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--head);font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+h1,h2,h3{font-family:var(--head);font-weight:400;letter-spacing:.01em;line-height:1.02;margin:0;text-wrap:balance}
+h2{text-transform:uppercase;font-weight:300}
 .note{background:var(--wine-d);color:#efdcd8;font-size:12px;text-align:center;padding:6px 12px}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
@@ -75,26 +78,49 @@ nav a{text-decoration:none;color:var(--muted);white-space:nowrap} nav a:hover{co
 @media (max-width:1100px){nav{display:none}}
 @media (max-width:640px){.hphone,.hbook{display:none}.hcall{display:grid}}
 
-/* hero */
-.hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:min(84vh,820px);border-bottom:1px solid var(--line)}
-.hero .l{display:grid;align-content:center;gap:22px;padding-block:56px}
-.where{font-size:15px;color:var(--wine);font-weight:500}
-.hero h1{font-size:clamp(42px,5.6vw,88px);color:var(--ink)}
-.hero h1 em{font-style:normal;color:var(--wine)}
-.hero .lead{font-size:clamp(16px,1.3vw,19px);color:var(--muted);max-width:520px;margin:0}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.facts{display:flex;gap:clamp(24px,3vw,52px);flex-wrap:wrap;padding-top:22px;border-top:1px solid var(--line);margin-top:6px}
-.facts div{display:grid;gap:2px}
-.facts b{font-family:var(--head);font-size:clamp(22px,2vw,28px);font-weight:600;color:var(--wine)}
-.facts span{font-size:14px;color:var(--muted)}
-.hero .r{background:linear-gradient(90deg,var(--cream) 0 22%,var(--wine) 22% 100%);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding-top:44px}
-.hero .arch{width:min(76%,540px);aspect-ratio:3/4.1;border-radius:999px 999px 0 0;overflow:hidden}
-.hero .arch img{width:100%;height:100%;object-fit:cover;object-position:62% 82%}
+/* hero: огромное название золотым градиентом, портрет поверх букв, подписи по краям */
+.hero{position:relative;overflow:hidden;min-height:min(92vh,880px);
+  background:radial-gradient(120% 90% at 50% 35%,#ead9c3 0%,#d6bc9c 55%,#b8977a 100%);color:#3b2a20;isolation:isolate}
+.hero .rings{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero .rings svg{width:100%;height:100%}
+.hero .brand{position:absolute;left:0;right:0;top:clamp(18px,3vw,40px);margin:0;text-align:center;z-index:1;
+  font-family:var(--head);font-weight:300;text-transform:uppercase;letter-spacing:.04em;line-height:.86;
+  font-size:clamp(84px,17.5vw,300px);background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 rgba(120,85,50,.15))}
+.hero .model{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:88%;width:min(46vw,640px);z-index:2;
+  mix-blend-mode:multiply;object-fit:cover;object-position:58% 85%;
+  -webkit-mask-image:radial-gradient(ellipse 62% 78% at 56% 62%,#000 58%,transparent 82%);mask-image:radial-gradient(ellipse 62% 78% at 56% 62%,#000 58%,transparent 82%)}
+/* заголовки разделов в стиле главной */
+.head h2,.prices .ttl h2,.about h2,.rev h2,.book h2{font-size:clamp(40px,4.8vw,76px);color:var(--wine)}
+.near .txt h2,.port h2{font-size:clamp(40px,4.8vw,76px);background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.season h3{text-transform:uppercase;font-weight:300;font-size:clamp(30px,2.8vw,42px)}
+.card .t b{font-weight:500;font-size:24px}
+.acc summary{font-weight:500;font-size:22px}
+.logo b{font-weight:500;font-size:28px;letter-spacing:.02em}
+.hero .side{position:absolute;z-index:3;top:50%;transform:translateY(-50%)}
+.hero .side.left{left:var(--pad);max-width:28vw}
+.hero .side.right{right:var(--pad);max-width:28vw;text-align:right}
+.hero .kind{font-family:var(--head);font-weight:300;text-transform:uppercase;font-size:clamp(34px,4.4vw,72px);line-height:.95;letter-spacing:.02em;
+  background:linear-gradient(180deg,#fff3dc,#c9a271);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .tag{font-family:var(--head);font-weight:400;font-size:clamp(22px,2.2vw,34px);line-height:1.15;color:#fbf1e1;text-shadow:0 1px 18px rgba(80,50,25,.25)}
+.hero .bottom{position:absolute;z-index:3;left:var(--pad);right:var(--pad);bottom:clamp(20px,3vw,40px);display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.hero .bottom .b{max-width:300px;font-size:14px;line-height:1.45;color:#3b2a20;font-weight:300}
+.hero .bottom .b::before{content:"";display:block;width:120px;height:1px;background:linear-gradient(90deg,transparent,#fff6e3,transparent);margin-bottom:12px}
+.hero .bottom .b.r{text-align:right}
+.hero .bottom .b.r::before{margin-left:auto}
+.hero .bottom .b b{font-weight:500}
+.hero .book1{display:inline-flex;margin-top:14px;background:rgba(255,248,236,.92);color:var(--wine);padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:500;font-size:14px}
+.hero .book1:hover{background:#fff}
 @media (max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:0}
-  .hero .r{order:-1;height:min(64vw,380px);padding-top:24px;background:linear-gradient(180deg,var(--cream) 0 30%,var(--wine) 30%)}
-  .hero .arch{width:min(62%,300px);aspect-ratio:auto;height:100%}
-  .hero .l{padding-block:32px 40px}
+  .hero{min-height:0;display:grid;padding-bottom:28px}
+  .hero .brand{position:relative;top:auto;padding-top:24px;font-size:22vw}
+  .hero .model{position:relative;left:auto;transform:none;margin:-9vw auto 0;height:auto;width:78vw;aspect-ratio:3/3.6}
+  .hero .side,.hero .bottom{position:relative;transform:none;top:auto;left:auto;right:auto;bottom:auto;max-width:none;text-align:center;padding:0 var(--pad)}
+  .hero .side.left{margin-top:-14vw}
+  .hero .side.right{margin-top:14px;text-align:center}
+  .hero .bottom{flex-direction:column;align-items:center;gap:16px;margin-top:22px}
+  .hero .bottom .b,.hero .bottom .b.r{text-align:center}
+  .hero .bottom .b::before,.hero .bottom .b.r::before{margin:0 auto 12px}
 }
 
 /* how to get */
@@ -241,22 +267,14 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <main id="top">
 
 <section class="hero" style="padding:0">
-  <div class="l px">
-    <div class="where">ул. Леонида Левина, 3 · ЖК Happy Planet</div>
-    <h1>Салон красоты <em>у&nbsp;вас во&nbsp;дворе</em></h1>
-    <p class="lead">Стрижки и окрашивание, маникюр и педикюр, брови, чистка лица и эпиляция. Все мастера в одном месте, на первом этаже дома.</p>
-    <div class="cta">
-      <a class="btn w" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться онлайн</a>
-      <a class="btn o" href="tel:+375293897453">Позвонить</a>
-    </div>
-    <div class="facts">
-      <div><b>1 этаж</b> <span>ЖК Happy Planet</span></div>
-      <div><b>10 минут</b> <span>пешком от «Аэродромной»</span></div>
-      <div><b>24/7</b> <span>онлайн-запись</span></div>
-    </div>
-  </div>
-  <div class="r">
-    <div class="arch"><img src="img/p1.jpg" alt="Девушка с длинными тёмными волосами"></div>
+  <div class="rings" aria-hidden="true"><svg viewBox="0 0 1440 880" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#fff6e3" stroke-opacity=".45" stroke-width="1"><circle cx="720" cy="560" r="330"/><circle cx="720" cy="560" r="520" stroke-opacity=".25"/><path d="M80 470 H 360" stroke-opacity=".5"/><path d="M1080 470 H 1360" stroke-opacity=".5"/></g><g fill="#fff6e3"><circle cx="390" cy="560" r="3"/><circle cx="1050" cy="560" r="3"/><circle cx="720" cy="230" r="3"/></g></svg></div>
+  <h1 class="brand">Сезоны <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">— салон красоты в ЖК Happy Planet</span></h1>
+  <img class="model" src="img/p1.jpg" alt="Девушка с длинными тёмными волосами">
+  <div class="side left"><div class="kind" aria-hidden="true">Салон <br>красоты</div></div>
+  <div class="side right"><p class="tag">Стрижки, маникюр и&nbsp;уход за&nbsp;лицом. <br>На первом этаже вашего дома.</p></div>
+  <div class="bottom">
+    <div class="b">Ул. Леонида Левина, 3 <br>ЖК Happy Planet, 1 этаж <br><b>10 минут от метро «Аэродромная»</b></div>
+    <div class="b r">Онлайн-запись круглосуточно <br>Телефон <a href="tel:+375293897453" style="text-decoration:none;font-weight:500">+375 29 389-74-53</a><br><a class="book1" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться</a></div>
   </div>
 </section>
 
