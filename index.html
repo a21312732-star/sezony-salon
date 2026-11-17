@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Сезоны — салон красоты в ЖК Happy Planet, Минск</title>
+<meta name="description" content="Салон красоты «Сезоны» в ЖК Happy Planet: стрижки, окрашивание, укладки, уход, брови и ресницы. Онлайн-запись.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: тёплый светлый салон, арочные формы как в интерьере, четыре сезонных акцента; текущий сезон подсвечен */
+:root{
+  --bg:#f7f3ee; --paper:#fffdfa; --ink:#2a2522; --muted:#7a6f68; --line:#e8dfd5;
+  --accent:#a85a3a; --accent-ink:#fff;
+  --spring:#8fae8b; --summer:#e2a173; --autumn:#a85a3a; --winter:#6d8aa6;
+  --display:"Playfair Display",Georgia,serif; --body:"Manrope",system-ui,sans-serif;
+  color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.w{max-width:1160px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.note{background:var(--ink);color:#e9e1d8;font-size:12px;text-align:center;padding:6px 12px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(247,243,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-block:14px}
+.logo{font-family:var(--display);font-size:28px;font-weight:600;text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.logo i{display:grid;grid-template-columns:1fr 1fr;width:22px;height:22px;border-radius:50%;overflow:hidden;transform:rotate(45deg)}
+.logo i b:nth-child(1){background:var(--spring)}.logo i b:nth-child(2){background:var(--summer)}.logo i b:nth-child(3){background:var(--winter)}.logo i b:nth-child(4){background:var(--autumn)}
+nav{display:flex;gap:26px;font-size:14px;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
+@media (max-width:860px){nav{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.p{background:var(--accent);color:var(--accent-ink)} .btn.p:hover{background:#934b2e}
+.btn.s{border:1.5px solid var(--ink);color:var(--ink)} .btn.s:hover{background:var(--ink);color:var(--bg)}
+.btn.sm{padding:10px 18px;font-size:14px}
+
+/* hero */
+.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-block:56px 72px}
+@media (max-width:860px){.hero .w{grid-template-columns:1fr;gap:32px;padding-block:32px 48px}}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(40px,6vw,72px);line-height:1.04;margin:14px 0 18px;letter-spacing:-.01em;text-wrap:balance}
+h1 em{font-style:italic;color:var(--accent)}
+.lead{font-size:18px;color:var(--muted);max-width:480px;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:24px;border-top:1px solid var(--line)}
+.facts div{display:grid;gap:2px}
+.facts b{font-family:var(--display);font-size:24px;font-weight:600}
+.facts span{font-size:13px;color:var(--muted)}
+.arch{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:999px 999px 18px 18px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(42,37,34,.45)}
+.arch img{width:100%;height:100%;object-fit:cover;filter:sepia(.25) saturate(.9)}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(168,90,58,.35))}
+.badge{position:absolute;left:-18px;bottom:40px;background:var(--paper);border-radius:16px;padding:14px 18px;box-shadow:0 14px 30px -12px rgba(42,37,34,.35);display:flex;gap:12px;align-items:center;z-index:2}
+.badge b{font-family:var(--display);font-size:26px}
+.badge small{display:block;color:var(--muted);font-size:12px;line-height:1.3}
+.heroimg{position:relative;padding-left:18px}
+@media (max-width:860px){.badge{left:8px;bottom:20px}.heroimg{padding-left:0}}
+
+/* sections */
+section{padding-block:72px}
+@media (max-width:640px){section{padding-block:52px}}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,4vw,46px);line-height:1.1;margin:8px 0 0;text-wrap:balance}
+.sh p{color:var(--muted);max-width:420px;margin:0}
+
+/* seasons */
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:900px){.seasons{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.seasons{grid-template-columns:1fr}}
+.season{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px;display:grid;gap:10px;position:relative;transition:transform .25s,box-shadow .25s}
+.season .dot{width:38px;height:38px;border-radius:50%;background:var(--c)}
+.season h3{font-family:var(--display);font-weight:500;font-size:24px;margin:4px 0 0}
+.season p{margin:0;color:var(--muted);font-size:15px}
+.season .tag{position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--c);color:#fff;padding:4px 10px;border-radius:999px;display:none}
+.season.now{border-color:var(--c);box-shadow:0 18px 40px -22px var(--c);transform:translateY(-4px)}
+.season.now .tag{display:block}
+
+/* services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:860px){.svc{grid-template-columns:1fr}}
+.cat{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:grid;grid-template-columns:150px 1fr}
+@media (max-width:520px){.cat{grid-template-columns:1fr}.cat img{height:160px}}
+.cat img{width:100%;height:100%;object-fit:cover}
+.cat .b{padding:22px 24px}
+.cat h3{font-family:var(--display);font-weight:500;font-size:24px;margin:0 0 10px}
+.row{display:flex;justify-content:space-between;gap:12px;padding-block:8px;border-bottom:1px dashed var(--line);font-size:15px}
+.row:last-child{border-bottom:0}
+.row span:last-child{font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pricenote{margin-top:18px;font-size:13px;color:var(--muted)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.gal .tall{grid-row:span 2}
+@media (max-width:760px){.gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}}
+
+/* steps */
+.band{background:var(--ink);color:#f3ece4;border-radius:32px}
+.band .in{padding:56px clamp(22px,5vw,64px);display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
+@media (max-width:860px){.band .in{grid-template-columns:1fr}}
+.band h2{color:#fff}
+.band p{color:#cbbfb4}
+.steps{display:grid;gap:14px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:rgba(255,255,255,.06);border-radius:18px;padding:16px}
+.step b.n{width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-family:var(--display);font-size:20px;color:#fff}
+.step strong{display:block;color:#fff}
+.step span{font-size:14px;color:#cbbfb4}
+
+/* contacts */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:16px;align-content:start}
+.card h3{font-family:var(--display);font-weight:500;font-size:26px;margin:0}
+.li{display:grid;gap:2px}
+.li small{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.li a,.li span{font-size:17px;font-weight:600;text-decoration:none}
+.soc{display:flex;gap:10px;flex-wrap:wrap}
+.soc a{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;text-decoration:none;font-weight:500}
+.soc a:hover{border-color:var(--ink)}
+.mapcard{background:linear-gradient(135deg,#efe6dc,#e6dace);position:relative;overflow:hidden}
+.mapcard::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(0deg,transparent 0 38px,rgba(255,255,255,.55) 38px 40px),
+  repeating-linear-gradient(90deg,transparent 0 52px,rgba(255,255,255,.55) 52px 54px)}
+.mapcard>*{position:relative}
+.pin{width:46px;height:46px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--accent);display:grid;place-items:center;box-shadow:0 10px 20px -8px rgba(168,90,58,.7)}
+.pin i{width:16px;height:16px;border-radius:50%;background:#fff}
+
+footer{padding-block:36px;border-top:1px solid var(--line);margin-top:20px}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+
+/* mobile sticky booking */
+.mbook{display:none}
+@media (max-width:640px){
+  .mbook{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;box-shadow:0 12px 30px -10px rgba(42,37,34,.5)}
+  body{padding-bottom:76px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="note">Пример сайта для салона «Сезоны» · фото и часть цен примерные, заменим на ваши</div>
+
+<header><div class="w">
+  <a class="logo" href="#top"><i><b></b><b></b><b></b><b></b></i>Сезоны</a>
+  <nav><a href="#seasons">Сезоны</a><a href="#services">Услуги и цены</a><a href="#works">Работы</a><a href="#contacts">Контакты</a></nav>
+  <a class="btn p sm" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="w">
+  <div>
+    <div class="eyebrow">Салон красоты · ЖК Happy Planet</div>
+    <h1>Красота <em>в любое</em> время года</h1>
+    <p class="lead">Стрижки, окрашивание, укладки и уход в двух минутах от дома. Подберём образ под сезон и под вас.</p>
+    <div class="cta">
+      <a class="btn p" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться онлайн</a>
+      <a class="btn s" href="https://t.me/+375293897453" target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+    <div class="facts">
+      <div><b>5.0</b><span>рейтинг в 2ГИС</span></div>
+      <div><b>от 75 BYN</b><span>женская стрижка</span></div>
+      <div><b>24/7</b><span>онлайн-запись</span></div>
+    </div>
+  </div>
+  <div class="heroimg">
+    <div class="arch"><img src="img/interior.jpg" alt="Интерьер салона красоты"></div>
+    <div class="badge"><b>★ 5.0</b><small>оценка клиентов<br>в 2ГИС</small></div>
+  </div>
+</div></div>
+
+<section id="seasons"><div class="w">
+  <div class="sh">
+    <div><div class="eyebrow">Наша идея</div><h2>Образ для каждого сезона</h2></div>
+    <p>Волосам и коже в разное время года нужно разное. Мы знаем, что именно, и подскажем.</p>
+  </div>
+  <div class="seasons">
+    <div class="season" data-s="spring" style="--c:var(--spring)"><span class="tag">Сейчас</span><span class="dot"></span><h3>Весна</h3><p>Обновляем форму стрижки и освежаем цвет после зимы.</p></div>
+    <div class="season" data-s="summer" style="--c:var(--summer)"><span class="tag">Сейчас</span><span class="dot"></span><h3>Лето</h3><p>Лёгкие укладки и защита волос от солнца и выгорания.</p></div>
+    <div class="season" data-s="autumn" style="--c:var(--autumn)"><span class="tag">Сейчас</span><span class="dot"></span><h3>Осень</h3><p>Тёплые глубокие оттенки окрашивания и восстановление после лета.</p></div>
+    <div class="season" data-s="winter" style="--c:var(--winter)"><span class="tag">Сейчас</span><span class="dot"></span><h3>Зима</h3><p>Питающий уход и праздничные укладки к Новому году.</p></div>
+  </div>
+</div></section>
+
+<section id="services" style="padding-top:0"><div class="w">
+  <div class="sh">
+    <div><div class="eyebrow">Прайс</div><h2>Услуги и цены</h2></div>
+    <p>Точную стоимость мастер назовёт после консультации — она зависит от длины и густоты волос.</p>
+  </div>
+  <div class="svc">
+    <div class="cat"><img src="img/cut.jpg" alt="Стрижка в салоне"><div class="b"><h3>Стрижки</h3>
+      <div class="row"><span>Женская стрижка</span><span>от 75 BYN</span></div>
+      <div class="row"><span>Мужская стрижка</span><span>от 45 BYN</span></div>
+      <div class="row"><span>Детская стрижка</span><span>от 35 BYN</span></div>
+      <div class="row"><span>Подравнивание кончиков</span><span>от 40 BYN</span></div>
+    </div></div>
+    <div class="cat"><img src="img/color.jpg" alt="Сложное окрашивание"><div class="b"><h3>Окрашивание</h3>
+      <div class="row"><span>Окрашивание в один тон</span><span>от 120 BYN</span></div>
+      <div class="row"><span>Тонирование</span><span>от 90 BYN</span></div>
+      <div class="row"><span>Сложное окрашивание</span><span>от 220 BYN</span></div>
+      <div class="row"><span>Окрашивание корней</span><span>от 95 BYN</span></div>
+    </div></div>
+    <div class="cat"><img src="img/styling.jpg" alt="Укладка феном"><div class="b"><h3>Укладки</h3>
+      <div class="row"><span>Укладка феном</span><span>от 45 BYN</span></div>
+      <div class="row"><span>Локоны</span><span>от 60 BYN</span></div>
+      <div class="row"><span>Вечерняя причёска</span><span>от 90 BYN</span></div>
+    </div></div>
+    <div class="cat"><img src="img/care.jpg" alt="Средства для ухода за волосами"><div class="b"><h3>Уход</h3>
+      <div class="row"><span>Уходовая процедура</span><span>от 60 BYN</span></div>
+      <div class="row"><span>Кератиновое выпрямление</span><span>от 180 BYN</span></div>
+      <div class="row"><span>Брови: коррекция и окрашивание</span><span>от 30 BYN</span></div>
+    </div></div>
+  </div>
+  <p class="pricenote">* Женская стрижка — по данным 2ГИС. Остальные цены в примере ориентировочные, на сайте будет ваш актуальный прайс.</p>
+</div></section>
+
+<section id="works" style="padding-top:0"><div class="w">
+  <div class="sh">
+    <div><div class="eyebrow">Портфолио</div><h2>Наши работы</h2></div>
+    <p>Здесь будут фото из вашего Instagram — клиенты выбирают мастера глазами.</p>
+  </div>
+  <div class="gal">
+    <img class="tall" src="img/color.jpg" alt="Балаяж на длинных волосах" loading="lazy">
+    <img src="img/styling.jpg" alt="Укладка" loading="lazy">
+    <img src="img/hair.jpg" alt="Яркое окрашивание" loading="lazy">
+    <img class="tall" src="img/brows.jpg" alt="Брови" loading="lazy">
+    <img src="img/cut.jpg" alt="Стрижка" loading="lazy">
+    <img src="img/tools.jpg" alt="Инструменты мастера" loading="lazy">
+  </div>
+  <div style="margin-top:22px"><a class="btn s sm" href="https://instagram.com/sezony.beauty" target="_blank" rel="noopener">Больше работ в Instagram</a></div>
+</div></section>
+
+<section style="padding-top:0"><div class="w"><div class="band"><div class="in">
+  <div><div class="eyebrow" style="color:#e7b79c">Запись</div><h2>Запишитесь за минуту</h2><p>Без звонков и ожидания ответа: выберите удобное время онлайн или напишите нам в мессенджер.</p>
+    <div class="cta" style="margin-top:22px"><a class="btn p" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Выбрать время</a></div></div>
+  <div class="steps">
+    <div class="step"><b class="n">1</b><div><strong>Выберите услугу</strong><span>Стрижка, окрашивание, укладка или уход.</span></div></div>
+    <div class="step"><b class="n">2</b><div><strong>Выберите мастера и время</strong><span>Свободные окна видно сразу, онлайн-запись работает круглосуточно.</span></div></div>
+    <div class="step"><b class="n">3</b><div><strong>Приходите</strong><span>ЖК Happy Planet, ул. Леонида Левина, 3, 1 этаж.</span></div></div>
+  </div>
+</div></div></div></section>
+
+<section id="contacts" style="padding-top:0"><div class="w">
+  <div class="sh"><div><div class="eyebrow">Контакты</div><h2>Ждём вас в Happy Planet</h2></div></div>
+  <div class="contact">
+    <div class="card">
+      <h3>Салон «Сезоны»</h3>
+      <div class="li"><small>Адрес</small><span>Минск, ул. Леонида Левина, 3<br>ЖК Happy Planet, 1 этаж</span></div>
+      <div class="li"><small>Телефон</small><a href="tel:+375293897453">+375 29 389-74-53</a></div>
+      <div class="li"><small>Запись</small><a href="https://n2116917.yclients.com" target="_blank" rel="noopener">Онлайн-запись 24/7 →</a></div>
+      <div class="soc">
+        <a href="https://t.me/+375293897453" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://instagram.com/sezony.beauty" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/375293897453" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="viber://chat/?number=%2B375293897453">Viber</a>
+      </div>
+    </div>
+    <div class="card mapcard">
+      <div class="pin"><i></i></div>
+      <h3>Как добраться</h3>
+      <p style="margin:0;color:var(--muted)">Октябрьский район, ЖК Happy Planet. Вход с улицы, первый этаж.</p>
+      <div><a class="btn s sm" href="https://2gis.by/minsk/firm/70000001113825267" target="_blank" rel="noopener">Открыть маршрут в 2ГИС</a></div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="w"><span>© Сезоны, салон красоты · Минск</span><span>ул. Леонида Левина, 3 · +375 29 389-74-53</span></div></footer>
+
+<a class="btn p mbook" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться онлайн</a>
+
+<script>
+(function(){
+  var m=new Date().getMonth();
+  var s=m<2||m===11?'winter':m<5?'spring':m<8?'summer':'autumn';
+  var el=document.querySelector('.season[data-s="'+s+'"]');
+  if(el) el.classList.add('now');
+})();
+</script>
+</body>
+</html>
