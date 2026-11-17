@@ -16,6 +16,29 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#6b1420">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%236b1420'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23f3ece4'%3E%D0%A1%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Сезоны",
+  "description": "Салон красоты в ЖК Happy Planet: стрижки, окрашивание, маникюр и педикюр, чистка лица, брови, восковая эпиляция.",
+  "url": "https://a21312732-star.github.io/sezony-salon/",
+  "image": "https://a21312732-star.github.io/sezony-salon/img/og.jpg",
+  "telephone": "+375293897453",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Леонида Левина, 3",
+    "addressLocality": "Минск",
+    "postalCode": "220065",
+    "addressCountry": "BY"
+  },
+  "geo": {"@type": "GeoCoordinates", "latitude": 53.86858, "longitude": 27.535354},
+  "paymentAccepted": "Наличные, банковская карта",
+  "currenciesAccepted": "BYN",
+  "sameAs": ["https://instagram.com/sezony.beauty", "https://2gis.by/minsk/firm/70000001113825267"],
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "bestRating": "5", "ratingCount": "1"}
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap">
 <style>
@@ -163,6 +186,10 @@ section{padding-block:clamp(64px,8vw,120px)}
 .rev .q{background:var(--paper);padding:clamp(40px,6vw,96px) var(--pad);display:grid;gap:20px;align-content:center;border-right:1px solid var(--line)}
 .rev .big{font-family:var(--display);font-size:clamp(80px,10vw,160px);line-height:.8;color:var(--wine)}
 .rev .q p{margin:0;color:var(--muted);max-width:460px}
+.rev .quote{margin:0;font-family:var(--display);font-style:italic;font-size:clamp(24px,2.4vw,36px);line-height:1.25;color:var(--ink);max-width:560px}
+.rev .who{font-size:12px;letter-spacing:.08em}
+.map{height:clamp(320px,38vw,480px);border-top:1px solid var(--line);background:var(--paper)}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:sepia(.25) saturate(.85)}
 .rev .ph{background:url(img/p2.jpg) center 25%/cover;min-height:440px}
 @media (max-width:900px){.rev{grid-template-columns:1fr}.rev .ph{min-height:340px}}
 
@@ -336,7 +363,8 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="q">
     <div class="label">Отзывы</div>
     <div class="big">5.0</div>
-    <p>Оценка салона в 2ГИС. На готовом сайте здесь будут отзывы ваших клиентов.</p>
+    <blockquote class="quote">«Классный стильный салон, чай, кофе и очень милый мастер 💞 Работой более чем довольна»</blockquote>
+    <p class="who">Prasanik V. · 3 посещения · отзыв подтверждён в 2ГИС</p>
     <div><a class="btn o" href="https://2gis.by/minsk/firm/70000001113825267/tab/reviews" target="_blank" rel="noopener">Отзывы в 2ГИС</a></div>
   </div>
   <div class="ph" role="img" aria-label="Портрет девушки с собранными волосами"></div>
@@ -363,6 +391,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
   </div>
 </section>
+<div class="map"><iframe src="https://yandex.by/map-widget/v1/?ll=27.535354%2C53.86858&amp;z=16&amp;pt=27.535354%2C53.86858%2Cpm2rdm&amp;lang=ru_RU" title="Карта: салон «Сезоны», ул. Леонида Левина, 3" loading="lazy" allowfullscreen></iframe></div>
 </main>
 
 <footer><div class="in px"><span>© Сезоны · салон красоты · Минск</span><span>ул. Леонида Левина, 3 · +375 29 389-74-53</span></div></footer>
