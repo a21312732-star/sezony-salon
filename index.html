@@ -138,6 +138,7 @@ section{padding-block:clamp(64px,8vw,120px)}
 .acc summary::-webkit-details-marker{display:none}
 .acc details[open] .arrow{transform:rotate(90deg);background:var(--wine);color:#fff;border-color:var(--wine)}
 .acc .rows{padding:0 30px 22px}
+.acc .rows{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));column-gap:28px}
 .acc .row{display:flex;justify-content:space-between;gap:16px;padding-block:9px;border-bottom:1px dashed var(--line);font-size:14px}
 .acc .row:last-child{border-bottom:0}
 .acc .row b{font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--wine)}
@@ -236,7 +237,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <div class="note">Пример сайта для салона «Сезоны» · фото и часть цен примерные, заменим на ваши</div>
 
 <header><div class="in px">
-  <a class="logo" href="#top"><b>Сезоны</b><small>салон красоты</small></a>
+  <a class="logo" href="#top"><b>Сезоны</b> <small>салон красоты</small></a>
   <nav><a href="#services">Услуги</a><a href="#seasons">Сезоны</a><a href="#about">О салоне</a><a href="#portfolio">Работы</a><a href="#book">Контакты</a></nav>
   <a class="hphone" href="tel:+375293897453">+375 29 389-74-53</a>
   <a class="btn w" href="https://n2116917.yclients.com" target="_blank" rel="noopener" style="padding:11px 14px 11px 22px">Записаться</a>
@@ -251,9 +252,9 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <p class="lead">Волосы, ногти, лицо и брови в одном салоне на первом этаже вашего дома. Десять минут пешком от метро «Аэродромная».</p>
     <div><a class="btn w" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться онлайн</a></div>
     <div class="facts">
-      <div><b>5.0</b><span>оценка в 2ГИС</span></div>
-      <div><b>от 75 BYN</b><span>женская стрижка</span></div>
-      <div><b>24/7</b><span>онлайн-запись</span></div>
+      <div><b>5.0</b> <span>оценка в 2ГИС</span></div>
+      <div><b>от 75 BYN</b> <span>женская стрижка</span></div>
+      <div><b>24/7</b> <span>онлайн-запись</span></div>
     </div>
   </div>
   <div class="r">
@@ -265,10 +266,10 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="img" role="img" aria-label="Красные антуриумы"></div>
   <div class="txt"><h2 class="cap">Рядом <br>с домом</h2><p>Спуститься на первый этаж быстрее, чем доехать до центра. А записаться можно ночью, не дожидаясь ответа администратора.</p></div>
   <ul>
-    <li><svg aria-hidden="true"><use href="#metro"/></svg><span><b>900 м до метро «Аэродромная»</b>около 10 минут пешком</span></li>
-    <li><svg aria-hidden="true"><use href="#car"/></svg><span><b>Парковки рядом</b>13 парковок по данным 2ГИС</span></li>
-    <li><svg aria-hidden="true"><use href="#paw"/></svg><span><b>Пандус, можно с собакой</b>удобно с коляской и питомцем</span></li>
-    <li><svg aria-hidden="true"><use href="#card"/></svg><span><b>Оплата картой и наличными</b>и Wi-Fi, пока ждёте</span></li>
+    <li><svg aria-hidden="true"><use href="#metro"/></svg><span><b>900 м до метро «Аэродромная»</b> около 10 минут пешком</span></li>
+    <li><svg aria-hidden="true"><use href="#car"/></svg><span><b>Парковки рядом</b> 13 парковок по данным 2ГИС</span></li>
+    <li><svg aria-hidden="true"><use href="#paw"/></svg><span><b>Пандус, можно с собакой</b> удобно с коляской и питомцем</span></li>
+    <li><svg aria-hidden="true"><use href="#card"/></svg><span><b>Оплата картой и наличными</b> и Wi-Fi, пока ждёте</span></li>
   </ul>
 </div>
 
@@ -278,41 +279,43 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <p>Все основные бьюти-услуги в одном месте: не нужно искать отдельного мастера для каждой.</p>
   </div>
   <div class="cards">
-    <a class="card" href="#p-hair"><div class="ph"><img src="img/cut.jpg" alt="Стрижка" loading="lazy"></div><div class="t"><span>Волосы<small>стрижки, химзавивка, причёски</small></span><span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></div></a>
-    <a class="card" href="#p-hair"><div class="ph"><img src="img/color.jpg" alt="Сложное окрашивание" loading="lazy"></div><div class="t"><span>Окрашивание<small>сложное окрашивание, восстановление</small></span><span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></div></a>
-    <a class="card" href="#p-face"><div class="ph"><img src="img/brows.jpg" alt="Брови и уход за лицом" loading="lazy"></div><div class="t"><span>Лицо и брови<small>чистка, пилинги, массаж лица</small></span><span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></div></a>
-    <a class="card" href="#p-nails"><div class="ph"><img src="img/care.jpg" alt="Средства для ухода" loading="lazy"></div><div class="t"><span>Ногти<small>маникюр и педикюр</small></span><span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></div></a>
+    <a class="card" href="#p-hair"><div class="ph"><img src="img/cut.jpg" alt="Стрижка" loading="lazy"></div><div class="t"><span>Волосы <small>стрижки, химзавивка, причёски</small></span><span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></div></a>
+    <a class="card" href="#p-hair"><div class="ph"><img src="img/color.jpg" alt="Сложное окрашивание" loading="lazy"></div><div class="t"><span>Окрашивание <small>сложное окрашивание, восстановление</small></span><span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></div></a>
+    <a class="card" href="#p-face"><div class="ph"><img src="img/brows.jpg" alt="Брови и уход за лицом" loading="lazy"></div><div class="t"><span>Лицо и брови <small>чистка, пилинги, массаж лица</small></span><span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></div></a>
+    <a class="card" href="#p-nails"><div class="ph"><img src="img/care.jpg" alt="Средства для ухода" loading="lazy"></div><div class="t"><span>Ногти <small>маникюр и педикюр</small></span><span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></div></a>
   </div>
 
   <div class="prices" id="prices">
     <div class="ttl"><h3 class="it">Список услуг</h3><p>Нажмите на категорию, чтобы открыть список. Свободное время и точные цены видно в онлайн-записи.</p></div>
     <div>
+      <p class="pnote" style="margin:0 0 16px">Цены и свободное время — в <a href="https://n2116917.yclients.com" target="_blank" rel="noopener">онлайн-записи</a>.</p>
       <div class="acc">
         <details id="p-hair" open><summary>Волосы<span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></summary><div class="rows">
-          <div class="row"><span>Женская стрижка</span><b>от 75 BYN</b></div>
-          <div class="row"><span>Мужская стрижка</span><b>от 20 BYN</b></div>
-          <div class="row"><span>Детская стрижка</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Сложное окрашивание</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Кератиновое выпрямление</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Холодное восстановление волос</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Химзавивка, женская и мужская</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Свадебные и вечерние причёски</span><b class="q">уточняйте</b></div></div></details>
+          <div class="row"><span>Женская стрижка</span> <b>от 75 BYN</b></div>
+          <div class="row"><span>Мужская стрижка</span> <b>от 20 BYN</b></div>
+          <div class="row"><span>Детская стрижка</span></div>
+          <div class="row"><span>Сложное окрашивание</span></div>
+          <div class="row"><span>Кератиновое выпрямление</span></div>
+          <div class="row"><span>Холодное восстановление волос</span></div>
+          <div class="row"><span>Химзавивка, женская и мужская</span></div>
+          <div class="row"><span>Свадебные и вечерние причёски</span></div></div></details>
         <details id="p-nails"><summary>Ногти<span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></summary><div class="rows">
-          <div class="row"><span>Аппаратный маникюр</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Гель-лак</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Наращивание гелем</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Женский педикюр</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Мужской маникюр и педикюр</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Детский маникюр</span><b class="q">уточняйте</b></div></div></details>
+          <div class="row"><span>Аппаратный маникюр</span></div>
+          <div class="row"><span>Гель-лак</span></div>
+          <div class="row"><span>Наращивание гелем</span></div>
+          <div class="row"><span>Женский педикюр</span></div>
+          <div class="row"><span>Мужской маникюр и педикюр</span></div>
+          <div class="row"><span>Детский маникюр</span></div></div></details>
         <details id="p-face"><summary>Лицо и брови<span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></summary><div class="rows">
-          <div class="row"><span>Чистка лица</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Пилинги</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Массаж лица</span><b class="q">уточняйте</b></div>
-          <div class="row"><span>Коррекция и окрашивание бровей</span><b class="q">уточняйте</b></div></div></details>
+          <div class="row"><span>Чистка лица</span></div>
+          <div class="row"><span>Пилинги</span></div>
+          <div class="row"><span>Массаж лица</span></div>
+          <div class="row"><span>Коррекция и окрашивание бровей</span></div></div></details>
         <details><summary>Эпиляция<span class="arrow"><svg aria-hidden="true"><use href="#ar"/></svg></span></summary><div class="rows">
-          <div class="row"><span>Восковая эпиляция</span><b class="q">уточняйте</b></div></div></details>
+          <div class="row"><span>Восковая эпиляция</span></div></div></details>
       </div>
       <p class="pnote">Список услуг и цены на стрижки — по данным 2ГИС. Остальные цены добавим из вашего прайса.</p>
+
     </div>
   </div>
 </section>
@@ -321,16 +324,16 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="head px"><div><div class="label">Сезонное меню</div><h2 class="cap">Что сделать <i>в этом</i> сезоне</h2></div><p>У каждого времени года свои задачи для волос, кожи и ногтей. Мы собрали услуги, которые сейчас нужнее всего.</p></div>
   <div class="seasons">
     <div class="season" data-s="spring"><h3 class="cap">Весна</h3><p>Освежить форму после зимы.</p>
-      <ul><li><span>Женская стрижка</span><b>от 75 BYN</b></li><li><span>Пилинг</span></li><li><span>Коррекция бровей</span></li></ul>
+      <ul><li><span>Женская стрижка</span> <b>от 75 BYN</b></li><li><span>Пилинг</span></li><li><span>Коррекция бровей</span></li></ul>
       <a class="go" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться →</a></div>
     <div class="season" data-s="summer"><h3 class="cap">Лето</h3><p>Открытые сандалии и гладкая кожа.</p>
-      <ul><li><span>Женский педикюр</span></li><li><span>Восковая эпиляция</span></li><li><span>Мужская стрижка</span><b>от 20 BYN</b></li></ul>
+      <ul><li><span>Женский педикюр</span></li><li><span>Восковая эпиляция</span></li><li><span>Гель-лак</span></li></ul>
       <a class="go" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться →</a></div>
     <div class="season" data-s="autumn"><h3 class="cap">Осень</h3><p>Вернуть волосам силу после солнца.</p>
       <ul><li><span>Холодное восстановление</span></li><li><span>Сложное окрашивание</span></li><li><span>Чистка лица</span></li></ul>
       <a class="go" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться →</a></div>
     <div class="season" data-s="winter"><h3 class="cap">Зима</h3><p>Праздники и корпоративы.</p>
-      <ul><li><span>Вечерние причёски</span></li><li><span>Гель-лак</span></li><li><span>Массаж лица</span></li></ul>
+      <ul><li><span>Вечерние причёски</span></li><li><span>Наращивание гелем</span></li><li><span>Массаж лица</span></li></ul>
       <a class="go" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться →</a></div>
   </div>
 </section>
@@ -363,6 +366,7 @@ footer .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="q">
     <div class="label">Отзывы</div>
     <div class="big">5.0</div>
+    <p class="who">средняя оценка · 1 отзыв в 2ГИС</p>
     <blockquote class="quote">«Классный стильный салон, чай, кофе и очень милый мастер 💞 Работой более чем довольна»</blockquote>
     <p class="who">Prasanik V. · 3 посещения · отзыв подтверждён в 2ГИС</p>
     <div><a class="btn o" href="https://2gis.by/minsk/firm/70000001113825267/tab/reviews" target="_blank" rel="noopener">Отзывы в 2ГИС</a></div>
