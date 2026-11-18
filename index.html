@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Сезоны — салон красоты в ЖК Happy Planet, Минск</title>
-<meta name="description" content="Салон красоты «Сезоны» на ул. Леонида Левина, 3 (ЖК Happy Planet), 10 минут от метро «Аэродромная». Стрижки, окрашивание, маникюр и педикюр, брови, чистка лица, эпиляция. Онлайн-запись.">
+<title>Sезоны — салон красоты в ЖК Happy Planet, Минск</title>
+<meta name="description" content="Салон красоты «Sезоны» на ул. Леонида Левина, 3 (ЖК Happy Planet), 10 минут от метро «Аэродромная». Стрижки, окрашивание, маникюр и педикюр, брови, чистка лица, эпиляция. Онлайн-запись.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Сезоны — салон красоты в ЖК Happy Planet">
+<meta property="og:title" content="Sезоны — салон красоты в ЖК Happy Planet">
 <meta property="og:description" content="Стрижки, маникюр, брови и уход за лицом на первом этаже вашего дома. Онлайн-запись.">
 <meta property="og:image" content="https://a21312732-star.github.io/sezony-salon/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -15,12 +15,12 @@
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#121110">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23121110'/%3E%3Ctext x='20' y='30' font-family='Georgia,serif' font-size='26' text-anchor='middle' fill='%23c9a46b'%3E%D0%A1%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23121110'/%3E%3Ctext x='20' y='30' font-family='Georgia,serif' font-size='26' text-anchor='middle' fill='%23c9a46b'%3ES%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
-  "name": "Сезоны",
+  "name": "Sезоны",
   "description": "Салон красоты в ЖК Happy Planet: стрижки, окрашивание, маникюр и педикюр, чистка лица, брови, восковая эпиляция.",
   "url": "https://a21312732-star.github.io/sezony-salon/",
   "image": "https://a21312732-star.github.io/sezony-salon/img/og.jpg",
@@ -74,11 +74,15 @@ nav a:hover{color:var(--ink)}
 @media (max-width:1000px){nav{display:none}}
 
 .hero h1{position:relative;z-index:1;margin:0;font-family:var(--title);font-weight:400;text-transform:uppercase;color:var(--black);
-  font-size:clamp(88px,19.6vw,330px);line-height:.8;letter-spacing:-.01em;text-align:center;white-space:nowrap;margin-top:clamp(0px,1vw,10px)}
+  font-size:24vw;line-height:.8;letter-spacing:.05em;text-align:center;white-space:nowrap;margin-top:clamp(0px,1vw,10px);
+  transform:scaleX(1.3);transform-origin:50% 0}
 .hero h1 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .hero .model{position:absolute;z-index:2;bottom:0;left:36%;height:138%;width:min(50vw,760px);object-fit:cover;object-position:62% 100%;
   mix-blend-mode:multiply;filter:contrast(1.04);
   -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 82%,transparent 100%)}
+/* вырезанная голова поверх букв: тот же размер и кадр, что у основного фото, поэтому совпадает пиксель в пиксель */
+.hero .cut{position:absolute;z-index:3;bottom:0;left:36%;height:138%;width:min(50vw,760px);object-fit:cover;object-position:62% 100%;
+  filter:contrast(1.04) brightness(.985);pointer-events:none}
 .intro{position:relative;z-index:3;max-width:min(38vw,460px);padding-block:clamp(26px,3vw,46px) clamp(36px,5vw,72px);display:grid;gap:14px}
 .intro .k{color:var(--gold);letter-spacing:.42em;font-size:clamp(14px,1.2vw,18px);text-transform:uppercase;font-weight:400}
 .intro .t{font-size:clamp(24px,2.5vw,40px);letter-spacing:.14em;text-transform:uppercase;line-height:1.15;font-weight:400}
@@ -97,7 +101,8 @@ nav a:hover{color:var(--ink)}
 @media (prefers-reduced-motion:reduce){.badge .ring{animation:none}}
 @media (max-width:900px){
   .hero{min-height:0}
-  .hero h1{font-size:23vw}
+  .hero h1{font-size:21vw;transform:scaleX(1.12);letter-spacing:.02em}
+  .hero .cut{display:none}
   .hero .model{position:relative;left:auto;bottom:auto;margin:-12vw auto 0;width:92vw;height:auto;aspect-ratio:3/3.4;object-position:62% 70%;
     -webkit-mask-image:radial-gradient(ellipse 55% 60% at 55% 55%,#000 55%,transparent 85%);mask-image:radial-gradient(ellipse 55% 60% at 55% 55%,#000 55%,transparent 85%)}
   .intro{max-width:none;padding-top:8px}
@@ -208,16 +213,17 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(211,17
   <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15M5 19l7-7" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
 </defs></svg>
 
-<div class="note">Пример сайта для салона «Сезоны». Фото и часть цен примерные, заменим на ваши</div>
+<div class="note">Пример сайта для салона «Sезоны». Фото и часть цен примерные, заменим на ваши</div>
 
 <header class="hero">
   <div class="top px">
-    <a class="logo" href="#top" aria-label="Сезоны — на главную"><span class="m" aria-hidden="true">С</span><span>Сезоны</span></a>
+    <a class="logo" href="#top" aria-label="Sезоны — на главную"><span class="m" aria-hidden="true">S</span><span>Sезоны</span></a>
     <nav><a href="#services">Услуги</a><a href="#prices">Цены</a><a href="#seasons">Сезон</a><a href="#contacts">Контакты</a></nav>
     <a class="toplink" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться</a>
   </div>
-  <h1 id="top">Сезоны<span class="sr"> — салон красоты в ЖК Happy Planet, Минск</span></h1>
+  <h1 id="top">Sезоны<span class="sr"> — салон красоты в ЖК Happy Planet, Минск</span></h1>
   <img class="model" src="img/p1.jpg" alt="Девушка с длинными тёмными волосами">
+  <img class="cut" src="img/p1-cut.webp" alt="" aria-hidden="true">
   <div class="intro px">
     <div class="k">Салон красоты</div>
     <div class="t">В ЖК Happy&nbsp;Planet</div>
@@ -229,7 +235,7 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(211,17
   <div class="badge" aria-hidden="true">
     <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
       <g class="ring"><text font-family="Montserrat,sans-serif" font-size="13.5" letter-spacing="5" fill="#1a1714"><textPath href="#circ">САЛОН КРАСОТЫ · HAPPY PLANET · </textPath></text></g>
-      <text x="100" y="122" text-anchor="middle" font-family="Oranienbaum,serif" font-size="68" fill="#b38c55">С</text>
+      <text x="100" y="122" text-anchor="middle" font-family="Oranienbaum,serif" font-size="68" fill="#b38c55">S</text>
       <text x="58" y="160" font-size="16" fill="#b38c55">✦</text>
     </svg>
   </div>
@@ -318,12 +324,12 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(211,17
   </div>
 </section>
 
-<div class="map"><iframe src="https://yandex.by/map-widget/v1/?ll=27.535354%2C53.86858&amp;z=16&amp;pt=27.535354%2C53.86858%2Cpm2rdm&amp;lang=ru_RU" title="Карта: салон «Сезоны», ул. Леонида Левина, 3" loading="lazy" allowfullscreen></iframe></div>
+<div class="map"><iframe src="https://yandex.by/map-widget/v1/?ll=27.535354%2C53.86858&amp;z=16&amp;pt=27.535354%2C53.86858%2Cpm2rdm&amp;lang=ru_RU" title="Карта: салон «Sезоны», ул. Леонида Левина, 3" loading="lazy" allowfullscreen></iframe></div>
 </main>
 
 <footer id="contacts"><div class="px">
   <div class="cols">
-    <div class="big">Ждём вас <br>в «Сезонах» <br><span style="font-size:.6em;color:var(--gold)">✦</span></div>
+    <div class="big">Ждём вас <br>в «Sезонах» <br><span style="font-size:.6em;color:var(--gold)">✦</span></div>
     <div><h4>Контакты</h4><ul>
       <li><a href="tel:+375293897453">+375 29 389-74-53</a></li>
       <li>Минск, ул. Леонида Левина, 3</li>
@@ -336,9 +342,9 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(211,17
       <li><a href="https://t.me/+375293897453" target="_blank" rel="noopener">Telegram</a></li>
       <li><a href="https://wa.me/375293897453" target="_blank" rel="noopener">WhatsApp</a></li>
       <li><a href="https://2gis.by/minsk/firm/70000001113825267" target="_blank" rel="noopener">Маршрут в 2ГИС</a></li></ul></div>
-    <div class="mono" aria-hidden="true">С</div>
+    <div class="mono" aria-hidden="true">S</div>
   </div>
-  <div class="bottom"><span>© Сезоны · салон красоты · Минск</span><span>Оплата картой и наличными · Wi-Fi · можно с собакой</span></div>
+  <div class="bottom"><span>© Sезоны · салон красоты · Минск</span><span>Оплата картой и наличными · Wi-Fi · можно с собакой</span></div>
 </div></footer>
 
 <a class="btn d mbook" href="https://n2116917.yclients.com" target="_blank" rel="noopener">Записаться онлайн ✦</a>
